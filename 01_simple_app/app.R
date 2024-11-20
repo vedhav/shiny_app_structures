@@ -2,8 +2,6 @@ library(random.cdisc.data)
 library(tern)
 library(shiny)
 
-print(getwd())
-
 ui <- fluidPage(
   actionButton("refresh", "Refresh Data"),
   selectInput("endpoint", "Endpoint", c("OS", "EFS", "PFS")),
@@ -26,4 +24,4 @@ server <- function(input, output) {
   })
 }
 
-shinyApp(ui = ui, server = server, options = list(port = 1001))
+shinyApp(ui = ui, server = server)
