@@ -2,8 +2,6 @@
 
 This repository contains different ways of structuring the same shiny app.
 
-![screenshot](app_screenshot.png)
-
 ## Project Structure
 
 The repository is organized into several directories, each demonstrating a different approach to structuring the same Shiny application:
@@ -43,3 +41,165 @@ shiny::runApp("07_with_tests")
 setwd("08_golem"); golem::run_den()
 shiny::runApp("09_rhino")
 ```
+
+### App screenshots
+
+#### 01_simple_app
+
+```md
+01_simple_app
+└── app.R
+```
+
+![01_simple_app](01_simple_app.png)
+
+#### 02_single_file
+
+```md
+02_single_file
+└── app.R
+```
+
+![02_single_file](02_single_file.png)
+
+#### 03_multiple_files
+
+```md
+03_multiple_files
+├── app.R
+├── data.R
+├── dependencies.R
+└── plot.R
+```
+
+![03_multiple_files](03_multiple_files.png)
+
+#### 04_with_style
+
+```md
+04_with_style
+├── app.R
+├── data.R
+├── dependencies.R
+├── plot.R
+└── style.css
+```
+
+![04_with_style](04_with_style.png)
+
+#### 05_with_box
+
+```md
+05_with_box
+├── app.R
+├── data.R
+├── plot.R
+└── style.css
+```
+
+![05_with_box](05_with_box.png)
+
+#### 06_with_box_and_modules
+
+```md
+06_with_box_and_modules
+├── app.R
+├── modules
+│   ├── data.R
+│   └── plot.R
+└── style.css
+```
+
+![06_with_box_and_modules](06_with_box_and_modules.png)
+
+#### 07_with_tests
+
+```md
+07_with_tests
+├── app.R
+├── modules
+│   ├── data.R
+│   └── plot.R
+├── style.css
+└── testthat
+    └── test-main.R
+```
+
+![07_with_tests](07_with_tests.png)
+
+#### 08_golem
+
+```md
+08_golem
+├── DESCRIPTION
+├── NAMESPACE
+├── R
+│   ├── app_config.R
+│   ├── app_server.R
+│   ├── app_ui.R
+│   ├── data.R
+│   ├── plot.R
+│   └── run_app.R
+├── dev
+│   ├── 01_start.R
+│   ├── 02_dev.R
+│   ├── 03_deploy.R
+│   └── run_dev.R
+├── golem.Rproj
+├── inst
+│   ├── app
+│   │   └── www
+│   │       ├── favicon.ico
+│   │       └── style.css
+│   └── golem-config.yml
+├── man
+│   └── run_app.Rd
+└── tests
+    ├── testthat
+    │   └── test-main.R
+    └── testthat.R
+```
+
+![08_golem](08_golem.png)
+
+#### 09_rhino
+
+```md
+09_rhino
+├── app
+│   ├── js
+│   │   └── index.js
+│   ├── logic
+│   │   ├── __init__.R
+│   │   ├── data_utils.R
+│   │   └── plot.R
+│   ├── main.R
+│   ├── static
+│   │   ├── css
+│   │   │   └── app.min.css
+│   │   └── favicon.ico
+│   ├── styles
+│   │   └── main.scss
+│   └── view
+│       ├── __init__.R
+│       ├── data_refresh.R
+│       └── km_plot.R
+├── app.R
+├── config.yml
+├── dependencies.R
+├── renv
+│   ├── activate.R
+│   └── settings.json
+├── renv.lock
+├── rhino.Rproj
+├── rhino.yml
+└── tests
+    ├── cypress
+    │   └── e2e
+    │       └── app.cy.js
+    ├── cypress.config.js
+    └── testthat
+        └── test-main.R
+```
+
+![09_rhino](09_rhino.png)
